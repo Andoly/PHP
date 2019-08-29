@@ -1,8 +1,12 @@
 <?php session_start(); ?>
 
-<?php if($_SESSION['logado']):?>
-<h1>Acessando pagina secreta</h1>
-<p>KEY SYSTEM : 541AS1FR41FD2SF2FS69FSFDFW5EMJ4</p>
+<?php if(isset($_SESSION['Logado'])):?>
+    <h1>Acessando página secreta</h1>
+    <p>KEY SYSTEM : 541AS1-FR41FD-2SF2FS-69FSFD-FW5EMJ</p>
+    <br>
+    <a href="Logout.php">Logout(Sair)</a>
 <?php else:?>
-<h1>Sem permissão necessária para acesso a senha</h1>
+    <h1>Não possui permissão necessária para acesso a chave</h1>
+    <a href="Session.php">Efetuar Login</a>
 <?php endif;?>
+
