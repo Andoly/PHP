@@ -4,7 +4,12 @@
 </header>
 <body>
 
-<?php if(!$_POST['submit']):?>
+<!--Usado por forma de segurança por englobar os 4 métodos(GET, POST, COOKIE, SESSION)-->
+<?php
+$_REQUEST
+?>
+
+<?php if(!$_REQUEST['submit']):?>
 <form action="form.php" method="post">
 
     <fieldset>
@@ -18,10 +23,10 @@
 </form>
 <?php else:?>
 <h1>Dados enviados pelo formulário</h1>
-<b>Nome:</b> <?php echo $_POST["nome"];?><br>
-<b>Email:</b> <?php echo $_POST["email"];?><br>
-<b>Assunto:</b> <?php echo $_POST["assunto"];?><br>
-<b>Mensagem:</b> <?php echo $_POST["mensagem"];?><br>
+<b>Nome:</b> <?php echo $_REQUEST["nome"];?><br>
+<b>Email:</b> <?php echo $_REQUEST["email"];?><br>
+<b>Assunto:</b> <?php echo $_REQUEST["assunto"];?><br>
+<b>Mensagem:</b> <?php echo $_REQUEST["mensagem"];?><br>
 
 <a href="form.php"><br>Voltar</a>
 <?php endif;?>
